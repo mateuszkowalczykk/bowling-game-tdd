@@ -1,9 +1,16 @@
 public class Game {
-    public void roll(int knockedPins){
+    int currentRoll;
+    int[] rolls = new int[21];
 
+    public void roll(int knockedPins){
+        rolls[currentRoll++] = knockedPins;
     }
 
     public int score(){
-        return 0;
+        int result = 0;
+        for(int roll:rolls){
+            result+= roll;
+        }
+        return result;
     }
 }
