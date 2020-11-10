@@ -32,4 +32,9 @@ public class GameTest {
         multiRoll(1,1, 1,1, 1,1, 1,1, 1,1,1,1, 1,1, 1,1, 1,1, 1,1);
         assertThat(game.score()).isEqualTo(20);
     }
+    @Test
+    void scoreWithSpare() {
+        multiRoll(5,5, 3,3, 0,0, 0,0, 0,0, 0,0, 0,0, 0,0, 0,0, 0,0);
+        assertThat(game.score()).isEqualTo(19);
+    }
 }
