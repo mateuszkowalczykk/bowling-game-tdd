@@ -11,11 +11,11 @@ public class Game {
         int rollNumber = 0;
         for (int i = 1; i <= 10; i++) {
 
-            if(isSpare(rollNumber)){
-                result+= 10 + rolls[rollNumber+2];
-            }else if(rolls[rollNumber] == 10) {
+            if(rolls[rollNumber] == 10) {
                 result+= 10 + rolls[rollNumber+1] + rolls[rollNumber+2];
                 rollNumber--;
+            }else if(isSpare(rollNumber)){
+                result+= 10 + rolls[rollNumber+2];
             }else{
                 result += rolls[rollNumber] + rolls[rollNumber+1];
             }
@@ -24,6 +24,6 @@ public class Game {
         return result;
     }
     private boolean isSpare(int rollNumber){
-        return rolls[rollNumber] + rolls[rollNumber+1] == 10 && rolls[rollNumber] !=10 && rolls[rollNumber] !=0;
+        return rolls[rollNumber] + rolls[rollNumber+1] == 10;
     }
 }
