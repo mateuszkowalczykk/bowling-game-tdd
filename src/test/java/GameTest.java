@@ -37,4 +37,9 @@ public class GameTest {
         multiRoll(5,5, 3,3, 0,0, 0,0, 0,0, 0,0, 0,0, 0,0, 0,0, 0,0);
         assertThat(game.score()).isEqualTo(19);
     }
+    @Test
+    void scoreWithStrike() {
+        multiRoll(10, 3,3, 3,0, 0,0, 0,0, 0,0, 0,0, 0,0, 0,0, 0,0);
+        assertThat(game.score()).isEqualTo(25);
+    }
 }
