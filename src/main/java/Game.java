@@ -8,8 +8,13 @@ public class Game {
 
     public int score(){
         int result = 0;
-        for(int roll:rolls){
-            result+= roll;
+        int rollNumber = 0;
+        for (int i = 1; i <= 10; i++) {
+            result += rolls[rollNumber] + rolls[rollNumber+1];
+            if(rolls[rollNumber] + rolls[rollNumber+1]==10){//spare
+                result+=rolls[rollNumber+2];
+            }
+            rollNumber+= 2;
         }
         return result;
     }
