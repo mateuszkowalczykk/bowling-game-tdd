@@ -13,6 +13,9 @@ public class Game {
 
             if(isSpare(rollNumber)){
                 result+= 10 + rolls[rollNumber+2];
+            }else if(rolls[rollNumber] == 10) {
+                result+= 10 + rolls[rollNumber+1] + rolls[rollNumber+2];
+                rollNumber--;
             }else{
                 result += rolls[rollNumber] + rolls[rollNumber+1];
             }
