@@ -42,4 +42,9 @@ public class GameTest {
         multiRoll(10, 3,3, 3,0, 0,0, 0,0, 0,0, 0,0, 0,0, 0,0, 0,0);
         assertThat(game.score()).isEqualTo(25);
     }
+    @Test
+    void scorePerfectGame() {
+        multiRoll(10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10);
+        assertThat(game.score()).isEqualTo(300);
+    }
 }
