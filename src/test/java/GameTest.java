@@ -27,4 +27,9 @@ public class GameTest {
         multiRoll(0,0, 0,0, 0,0, 0,0, 0,0, 0,0, 0,0, 0,0, 0,0, 0,0);
         game.score();
     }
+    @Test
+    void canScoreWithOnes() {
+        multiRoll(1,1, 1,1, 1,1, 1,1, 1,1,1,1, 1,1, 1,1, 1,1, 1,1);
+        assertThat(game.score()).isEqualTo(20);
+    }
 }
