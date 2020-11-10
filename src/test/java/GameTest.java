@@ -12,4 +12,8 @@ public class GameTest {
         game = new Game();
     }
 
+    @Test
+    void canRoll() {
+        game.roll(0);
+    }
 }
